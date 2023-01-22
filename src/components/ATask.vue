@@ -62,4 +62,15 @@ export default {
         align-items: center;
     }
 }
+
+@media (max-width: 520px){
+    .task{
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+    p{
+        font-size: 12px;
+        
+    }
+}
 </style>

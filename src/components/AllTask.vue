@@ -1,10 +1,10 @@
 <template>
     <div class="alltask">
         <h2>
-            Toutes les tâches
+            All task
         </h2>
         <transition name="show-phrase">
-            <p v-if="phrase">
+            <p v-if="!this.$store.state.tasks.length">
                 There is no task. Add a task.
             </p>
         </transition>
@@ -36,18 +36,12 @@ export default {
     },
     data(){
         return{
-            phrase: false
+            phrase: true
         }
     },
     methods:{
         deleteTask(index){
             this.$store.commit("deleteTask", index);
-            if(!this.$store.state.tasks.length){
-                this.phrase = true;
-            }
-            else{
-                this.phrase = false;
-            }
         }
     }
 }
@@ -63,6 +57,7 @@ export default {
     border: solid 1px #fff;
     box-shadow: 7px 5px 5px 0px rgb(217, 217, 217);
     padding: 30px;
+    transition: all 0.5s ease;
 
     h2{
         margin-bottom: 20px;
@@ -97,6 +92,11 @@ export default {
 
     i{
         cursor: pointer;
+    }
+}
+@media (max-width: 520px){
+    .alltask{
+        width: 300px;
     }
 }
 </style>
