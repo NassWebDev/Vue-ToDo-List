@@ -72,7 +72,6 @@ export default {
         width: 100%;
     }
     
-    .list-move,
     .list-enter-active,
     .list-leave-active {
         transition: all 0.5s ease;
