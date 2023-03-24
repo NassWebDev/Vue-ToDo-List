@@ -2,7 +2,23 @@ import { createStore } from 'vuex'
 
 const store = createStore({
   state: {
-    tasks:[],
+    tasks:[
+      {
+        name: '1',
+        priority: 'qsdq',
+        date: '02/12/2021'
+      },
+      {
+        name: '2',
+        priority: 'qsdq',
+        date: '02/12/2021'
+      },
+      {
+        name: '3',
+        priority: 'qsdq',
+        date: '02/12/2021'
+      }
+    ],
   },
   getters: {
   },
