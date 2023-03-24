@@ -3,11 +3,7 @@
         <router-link to="/">All Task</router-link>
         <router-link to="/addtask">Add Task</router-link>
     </nav>
-    <router-view v-slot="slotProps">
-        <transition name="fade" mode="out-in">
-            <component :is="slotProps.Component"></component>
-        </transition>
-    </router-view>
+    <router-view/>
 </template>
 
 <script>
@@ -53,29 +49,5 @@ nav a {
 nav a.router-link-exact-active {
   /* color: #42b983; */
   transform: scale(1.1);
-}
-
-.fade-enter-from {
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-.fade-leave-to {
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-.fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-
-.fade-leave-active {
-  transition: all 0.3s ease-in;
-}
-
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-  transform: scale(1);
 }
 </style>
