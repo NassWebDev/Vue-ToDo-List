@@ -1,16 +1,16 @@
 <template>
     <div class="addtask">
-        <h2>Add a task</h2>
+        <h2>Ajouter une tâche</h2>
         <form @submit.prevent="addTask">
             <div class="row name">
-                <label>Name: </label>
-                <input type="text" v-model="task.name" placeholder="Write the task...">
+                <label>Nom: </label>
+                <input type="text" v-model="task.name" placeholder="Ecrivez la tâche...">
             </div>
             <div class="rows">
                 <div class="row priority">
-                    <label>Priority: </label>
+                    <label>Priorité: </label>
                     <select v-model="task.priority">
-                        <option disabled value="">Choose...</option>
+                        <option disabled value="">Choisissez...</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -21,9 +21,11 @@
                     <input type="date" v-model="task.date">
                 </div>
             </div>
-            <button>
-                Add
-            </button>
+            <div class="button">
+                <button>
+                    Ajouter
+                </button>
+            </div>
         </form>
     </div>
 </template>
@@ -53,7 +55,6 @@ export default {
                     date: null
                 }
                 this.$router.push({ name: 'alltask'});
-                console.log(this.$store.state.tasks);
             }
         }
     }
@@ -74,9 +75,6 @@ export default {
 
 form{
     width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .row{
@@ -85,7 +83,6 @@ form{
 }
 
 .rows{
-    width: 100%;
     display: flex;
     gap: 20px;
 }
@@ -105,7 +102,6 @@ select{
 }
 
 .button{
-    width: 100px;
     display: flex;
     justify-content: center;
     margin-top: 10px;
@@ -114,10 +110,6 @@ select{
 button{
     width: 100px;
     height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
     border: 1px solid transparent;
     border-radius: 5px;
     cursor: pointer;
@@ -126,29 +118,6 @@ button{
 
 button:hover{
     transform: scale(1.05);
-}
-
-@media (max-width: 520px){
-    .addtask{
-        width: 300px;
-    }
-
-    form{
-        width: 250px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .row{
-        width: 100%;
-    }
-
-    .rows{
-        width: 100%;
-        flex-direction: column;
-        gap: 0;
-    }
 }
 
 </style>
